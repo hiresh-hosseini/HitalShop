@@ -1,9 +1,14 @@
 class FixedTextString {
-  static String get wellcome => 'به فروشگاه خودتون خوش آمدید';
-  static String get chooseAnOptionTocontinue =>
+  static String get textWellcome => 'به فروشگاه خودتون خوش آمدید';
+  static String get textChooseAnOptionTocontinue =>
       'لطفا برای ادامه یکی از گزینه‌های زیر را انتخاب کنید';
-  static String get doYouHaveAnAccount => 'حساب کاربری دارید؟';
-  static String get register => 'ثبت نام';
-  static String get login => 'ورود';
+  static String get textDoYouHaveAnAccount => 'حساب کاربری دارید؟';
+  static String get textRegister => 'ثبت نام';
+  static String get textLogin => 'ورود';
   static String get doYoudontHaveAnAccount => 'حساب کاربری ندارید؟';
+  static String get textCategories => 'دسته‌بندی‌ها';
+  static String get textShowAll => 'نمایش همه';
+  static String get textAmazingDiscounts => 'تخفیف‌‌های شگفت‌انگیز';
+  static String get textToman => 'ت';
+  static String get textLastestProducts => 'جدیدترین محصولات';
 }

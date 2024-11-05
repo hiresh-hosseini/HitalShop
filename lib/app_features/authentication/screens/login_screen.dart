@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                       Image.asset('assets/images/h.webp', height: 60.0.h),
                       8.verticalSpace,
                       Text(
-                        FixedTextString.wellcome,
+                        FixedTextString.textWellcome,
                         style: TextStyle(
                           fontSize: 16.0.sp,
                           fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
-                          FixedTextString.login,
+                          FixedTextString.textLogin,
                           style: TextStyle(
                             fontSize: 16.0.sp,
                             fontWeight: FontWeight.bold,
@@ -72,7 +72,7 @@ class LoginScreen extends StatelessWidget {
                       20.0.verticalSpace,
 
                       ButtonWidget(
-                        text: FixedTextString.login,
+                        text: FixedTextString.textLogin,
                         onPressed: controller.login,
                         isLoading: controller.isLoading,
                       ),
@@ -84,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              FixedTextString.doYoudontHaveAnAccount,
+                              FixedTextString.textCategories,
                               style: TextStyle(
                                 fontSize: 14.0.sp,
                                 color: const Color(0xff8c8c8c),
@@ -92,7 +92,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             6.0.horizontalSpace,
                             Text(
-                              'ثبت نام',
+                              FixedTextString.textRegister,
                               style: TextStyle(
                                 fontSize: 14.0.sp,
                                 fontWeight: FontWeight.bold,

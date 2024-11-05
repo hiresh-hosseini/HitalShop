@@ -17,4 +17,11 @@ class ScreenUtilPakage extends StatelessWidget {
       },
     );
   }
+
+  static double get screenHeight => ScreenUtil().screenHeight;
+  static double get screenWidth => ScreenUtil().screenWidth;
+  static double r(double size) => size.r;
+  static double w(double size) => size.w;
+  static double h(double size) => size.h;
+  static double sp(double size) => size.sp;
 }

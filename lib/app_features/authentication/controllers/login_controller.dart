@@ -19,7 +19,7 @@ class LoginController extends GetxController {
       return 'لطفا شماره موبایل را وارد کنید';
     } else if (mobile.length != 11) {
       return 'شماره موبایل باید ۱۱ رقمی باشد';
-    } else if (!RegExp(r'^۰۹[۰-۹]{۹}$').hasMatch(mobile)) {
+    } else if (!RegExp(r'^09[0-9]{9}$').hasMatch(mobile)) {
       return 'شماره موبایل باید با ۰۹ شروع شود';
     }
     return null;

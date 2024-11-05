@@ -45,13 +45,13 @@ class StartScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      FixedTextString.wellcome,
+                      FixedTextString.textWellcome,
                       style: TextStyle(
                           fontWeight: FontWeight.w700, fontSize: 16.0.sp),
                     ),
                     6.verticalSpace,
                     Text(
-                      FixedTextString.chooseAnOptionTocontinue,
+                      FixedTextString.textChooseAnOptionTocontinue,
                       style: TextStyle(
                           fontSize: 12.0.sp, fontWeight: FontWeight.w500),
                     ),
@@ -62,7 +62,7 @@ class StartScreen extends StatelessWidget {
                         children: [
                           Expanded(
                             child: ButtonWidget(
-                              text: 'ثبت نام',
+                              text: FixedTextString.textRegister,
                               onPressed: () {
                                 Get.toNamed(NamedRouts.routeRegister);
                               },
@@ -71,7 +71,7 @@ class StartScreen extends StatelessWidget {
                           14.horizontalSpace,
                           Expanded(
                             child: ButtonWidget(
-                              text: 'ورود',
+                              text: FixedTextString.textLogin,
                               onPressed: () {
                                 Get.toNamed(NamedRouts.routeLogin);
                               },

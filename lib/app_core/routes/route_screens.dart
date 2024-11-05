@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop/app_core/routes/bindings/auth_bindeing.dart';
+import 'package:shop/app_core/routes/bindings/home_binding.dart';
 import 'package:shop/app_core/routes/routs_names.dart';
 import 'package:shop/app_features/authentication/screens/login_screen.dart';
 import 'package:shop/app_features/authentication/screens/register_screen.dart';
 import 'package:shop/app_features/authentication/screens/splash_screen.dart';
 import 'package:shop/app_features/authentication/screens/start_screen.dart';
+import 'package:shop/app_features/home/screens/home_screen.dart';
 
 class Routings {
   static List<GetPage> getPages = [
@@ -34,8 +35,8 @@ class Routings {
     //---------------------Home Screens---------------------
     GetPage(
       name: NamedRouts.routeHome,
-      page: () => Container(),
-      // binding: AuthBindings(),
+      page: () => const HomeScreen(),
+      binding: HomeBindings(),
     ),
   ];
 }

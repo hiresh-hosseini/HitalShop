@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shop/app_core/constants/strings/fixed_hint_string.dart';
 import 'package:shop/app_core/constants/strings/fixed_text_string.dart';
 import 'package:shop/app_core/routes/routs_names.dart';
 import 'package:shop/app_core/widgets/button_widget.dart';
@@ -29,7 +30,7 @@ class RegisterScreen extends StatelessWidget {
                       Image.asset('assets/images/h.webp', height: 60.0.h),
                       6.verticalSpace,
                       Text(
-                        FixedTextString.wellcome,
+                        FixedTextString.textWellcome,
                         style: TextStyle(
                           fontSize: 15.0.sp,
                           fontWeight: FontWeight.bold,
@@ -40,7 +41,7 @@ class RegisterScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.topRight,
                         child: Text(
-                          FixedTextString.register,
+                          FixedTextString.textRegister,
                           style: TextStyle(
                             fontSize: 16.0.sp,
                             fontWeight: FontWeight.w700,
@@ -51,7 +52,7 @@ class RegisterScreen extends StatelessWidget {
 
                       //Name------------------------------------------------------------
                       TextFieldWidget(
-                        hint: 'نام و نام خانوادگی',
+                        hint: FixedHintString.userName,
                         icon: Iconsax.user,
                         txtController: controller.txtName,
                         validator: controller.nameValidator,
@@ -60,7 +61,7 @@ class RegisterScreen extends StatelessWidget {
 
                       //Number------------------------------------------------------------
                       TextFieldWidget(
-                        hint: 'شماره موبایل',
+                        hint: FixedHintString.mobile,
                         icon: Iconsax.mobile,
                         type: TextInputType.number,
                         txtController: controller.txtMobile,
@@ -71,7 +72,7 @@ class RegisterScreen extends StatelessWidget {
 
                       //Pass------------------------------------------------------------
                       TextFieldWidget(
-                        hint: 'رمز عبور',
+                        hint: FixedHintString.password,
                         type: TextInputType.visiblePassword,
                         txtController: controller.txtPassword,
                         validator: controller.passwordValidator,
@@ -80,7 +81,7 @@ class RegisterScreen extends StatelessWidget {
 
                       //Pass Repeat------------------------------------------------------------
                       TextFieldWidget(
-                        hint: 'تکرار رمز عبور',
+                        hint: FixedHintString.repeatPassword,
                         type: TextInputType.visiblePassword,
                         txtController: controller.txtPasswordRepeat,
                         validator: controller.passwordRepeatValidator,
@@ -89,7 +90,7 @@ class RegisterScreen extends StatelessWidget {
 
                       //Register------------------------------------------------------------
                       ButtonWidget(
-                        text: 'ثبت نام',
+                        text: FixedTextString.textRegister,
                         onPressed: controller.regiter,
                         isLoading: controller.isLoading,
                       ),
@@ -100,7 +101,7 @@ class RegisterScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              FixedTextString.doYouHaveAnAccount,
+                              FixedTextString.textDoYouHaveAnAccount,
                               style: TextStyle(
                                 fontSize: 14.0.sp,
                                 color: const Color(0xff8c8c8c),
@@ -108,7 +109,7 @@ class RegisterScreen extends StatelessWidget {
                             ),
                             4.horizontalSpace,
                             Text(
-                              'وارد شوید',
+                              FixedTextString.textLogin,
                               style: TextStyle(
                                 fontSize: 12.0.sp,
                                 fontWeight: FontWeight.bold,

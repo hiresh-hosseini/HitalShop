@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         title: 'Shop',
         debugShowCheckedModeBanner: false,
+        defaultTransition: Transition.native,
         locale: const Locale('fa'),
         theme: ThemeConfigurationContoller().lightThemeData,
         initialRoute: NamedRouts.routeSplash,
