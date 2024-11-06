@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 import 'package:shop/app_core/constants/strings/fixed_text_string.dart';
 import 'package:shop/app_core/pakages/cached_network_image_pakage.dart';
 import 'package:shop/app_core/pakages/iconsax_pakage.dart';
-import 'package:shop/app_data/models/dashborad_product_model.dart';
+import 'package:shop/app_data/models/product_model.dart';
 
 class ProductListWidget extends StatelessWidget {
   const ProductListWidget(
       {super.key, required this.title, required this.listParoducts});
   final String title;
-  final List<DashboardProductModel> listParoducts;
+  final List<ProductModel> listParoducts;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,10 @@ class ProductListWidget extends StatelessWidget {
                       fontSize: 14, color: Theme.of(context).primaryColor),
                 ),
                 const SizedBox(width: 2),
-                IconsaxPakage(icon: IconsaxPakage.arrowLeft2, iconSize: 16),
+                IconsaxPakage(
+                    icon: IconsaxPakage.arrowLeft2,
+                    iconSize: 16,
+                    color: Theme.of(context).primaryColor),
               ],
             ),
           ),

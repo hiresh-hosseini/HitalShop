@@ -17,34 +17,41 @@ class DashboardScreen extends StatelessWidget {
         builder: (controller) {
           return controller.dashboardResponse == null
               ? LoadingPakage(color: Theme.of(context).primaryColor)
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    children: [
-                      SliderWidget(
-                        images: controller.dashboardResponse!.sliders ?? [],
-                      ),
-                      const SizedBox(height: 15),
+              : RefreshIndicator(
+                  onRefresh: () async {
+                    await controller.getDashboard();
+                  },
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 6),
 
-                      //------------------------------ Categories ------------------------------
-                      CategoriesListWidget(
-                          listCategories:
-                              controller.dashboardResponse!.categories ?? []),
-                      const SizedBox(height: 10),
+                        SliderWidget(
+                          images: controller.dashboardResponse!.sliders ?? [],
+                        ),
+                        const SizedBox(height: 15),
 
-                      //------------------------------ Products ------------------------------
-                      ProductListWidget(
-                          listParoducts: controller
-                                  .dashboardResponse!.discountedProducts ??
-                              [],
-                          title: FixedTextString.textAmazingDiscounts),
-                      ProductListWidget(
-                          listParoducts:
-                              controller.dashboardResponse!.latestProducts ??
-                                  [],
-                          title: FixedTextString.textLastestProducts),
-                      const SizedBox(height: 15),
-                    ],
+                        //------------------------------ Categories ------------------------------
+                        CategoriesListWidget(
+                            listCategories:
+                                controller.dashboardResponse!.categories ?? []),
+                        const SizedBox(height: 10),
+
+                        //------------------------------ Products ------------------------------
+                        ProductListWidget(
+                            listParoducts: controller
+                                    .dashboardResponse!.discountedProducts ??
+                                [],
+                            title: FixedTextString.textAmazingDiscounts),
+                        ProductListWidget(
+                            listParoducts:
+                                controller.dashboardResponse!.latestProducts ??
+                                    [],
+                            title: FixedTextString.textLastestProducts),
+                        const SizedBox(height: 30),
+                      ],
+                    ),
                   ),
                 );
         });

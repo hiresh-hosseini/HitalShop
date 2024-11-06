@@ -24,9 +24,9 @@ class SliderWidget extends StatelessWidget {
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 3),
             enlargeCenterPage: true,
-            enlargeFactor: 0.14.w,
-            height: 116.0.h,
-            viewportFraction: 0.8.w,
+            enlargeFactor: 0.16.w,
+            height: 114.0.h,
+            viewportFraction: 0.9,
           ),
           itemBuilder:
               (BuildContext context, int itemIndex, int pageViewIndex) =>
@@ -55,12 +55,12 @@ class SliderWidget extends StatelessWidget {
                       duration: const Duration(milliseconds: 150),
                       margin: EdgeInsets.only(right: 5.0.r),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(120.0.r),
                         color: currentIndex.value == index
                             ? Colors.white
                             : const Color(0xffd2d2d2),
                       ),
-                      width: currentIndex.value == index ? 28.0.w : 5.0.w,
+                      width: currentIndex.value == index ? 30.0.w : 5.0.w,
                       height: 4.0.h,
                     );
                   },

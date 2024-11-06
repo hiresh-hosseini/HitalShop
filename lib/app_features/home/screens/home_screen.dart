@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:shop/app_core/pakages/iconsax_pakage.dart';
 import 'package:shop/app_core/pakages/screen_util_pakage.dart';
 import 'package:shop/app_core/widgets/button_navigation.dart';
+import 'package:shop/app_features/category/screen/category_screen.dart';
 import 'package:shop/app_features/home/controllers/home_controller.dart';
 import 'package:shop/app_features/home/screens/dashboard_screen.dart';
 
@@ -98,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
                     DashboardScreen(),
-                    Container(color: Colors.red),
+                    CategoryScreen(),
                     Container(color: Colors.amber),
                     Container(color: Colors.yellow),
                     Container(color: Colors.yellow),

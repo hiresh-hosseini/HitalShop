@@ -6,6 +6,6 @@ class HomeBindings implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
-    Get.lazyPut<DashboardController>(() => DashboardController(), fenix: true);
+    Get.put(DashboardController());
   }
 }

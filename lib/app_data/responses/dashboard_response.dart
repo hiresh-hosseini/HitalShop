@@ -1,11 +1,11 @@
-import 'package:shop/app_data/models/dashboard_category_model.dart';
-import 'package:shop/app_data/models/dashborad_product_model.dart';
+import 'package:shop/app_data/models/category_model.dart';
+import 'package:shop/app_data/models/product_model.dart';
 
 class DashboardResponse {
   List<String>? sliders;
-  List<DashboardCategoryModel>? categories;
-  List<DashboardProductModel>? discountedProducts;
-  List<DashboardProductModel>? latestProducts;
+  List<CategoryModel>? categories;
+  List<ProductModel>? discountedProducts;
+  List<ProductModel>? latestProducts;
 
   DashboardResponse(
       {this.sliders,
@@ -16,21 +16,21 @@ class DashboardResponse {
   DashboardResponse.fromJson(Map<String, dynamic> json) {
     sliders = json['sliders'].cast<String>();
     if (json['categories'] != null) {
-      categories = <DashboardCategoryModel>[];
+      categories = <CategoryModel>[];
       json['categories'].forEach((v) {
-        categories!.add(DashboardCategoryModel.fromJson(v));
+        categories!.add(CategoryModel.fromJson(v));
       });
     }
     if (json['discounted_products'] != null) {
-      discountedProducts = <DashboardProductModel>[];
+      discountedProducts = <ProductModel>[];
       json['discounted_products'].forEach((v) {
-        discountedProducts!.add(DashboardProductModel.fromJson(v));
+        discountedProducts!.add(ProductModel.fromJson(v));
       });
     }
     if (json['latest_products'] != null) {
-      latestProducts = <DashboardProductModel>[];
+      latestProducts = <ProductModel>[];
       json['latest_products'].forEach((v) {
-        latestProducts!.add(DashboardProductModel.fromJson(v));
+        latestProducts!.add(ProductModel.fromJson(v));
       });
     }
   }

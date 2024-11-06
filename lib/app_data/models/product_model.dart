@@ -1,4 +1,4 @@
-class DashboardProductModel {
+class ProductModel {
   int? id;
   String? title;
   String? image;
@@ -13,7 +13,7 @@ class DashboardProductModel {
   int? cartCount;
   int? count;
 
-  DashboardProductModel(
+  ProductModel(
       {this.id,
       this.title,
       this.image,
@@ -28,7 +28,7 @@ class DashboardProductModel {
       this.count,
       this.cartCount});
 
-  DashboardProductModel.fromJson(Map<String, dynamic> json) {
+  ProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
     image = json['image'];

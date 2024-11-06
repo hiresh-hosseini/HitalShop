@@ -11,4 +11,7 @@ class FixedTextString {
   static String get textAmazingDiscounts => 'تخفیف‌‌های شگفت‌انگیز';
   static String get textToman => 'ت';
   static String get textLastestProducts => 'جدیدترین محصولات';
+  static String get textProducts => 'محصولات';
+  static String get textProductsWillBeAddedSoon =>
+      'به زودی محصولات اضافه خواهند شد';
 }

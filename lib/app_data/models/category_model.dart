@@ -1,11 +1,11 @@
-class DashboardCategoryModel {
+class CategoryModel {
   int? id;
   String? title;
   String? image;
 
-  DashboardCategoryModel({this.id, this.title, this.image});
+  CategoryModel({this.id, this.title, this.image});
 
-  DashboardCategoryModel.fromJson(Map<String, dynamic> json) {
+  CategoryModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
     image = json['image'];

@@ -4,19 +4,20 @@ import 'package:get/get.dart';
 import 'package:shop/app_core/constants/strings/fixed_text_string.dart';
 import 'package:shop/app_core/pakages/cached_network_image_pakage.dart';
 import 'package:shop/app_core/pakages/iconsax_pakage.dart';
-import 'package:shop/app_data/models/dashboard_category_model.dart';
+import 'package:shop/app_core/routes/routs_names.dart';
+import 'package:shop/app_data/models/category_model.dart';
 
 class CategoriesListWidget extends StatelessWidget {
   const CategoriesListWidget({super.key, required this.listCategories});
 
-  final List<DashboardCategoryModel> listCategories;
+  final List<CategoryModel> listCategories;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
-          onTap: () => () {},
+          onTap: () => Get.toNamed(NamedRouts.routeProduct),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Row(
@@ -39,7 +40,10 @@ class CategoriesListWidget extends StatelessWidget {
                       fontSize: 12.0.sp, color: Theme.of(context).primaryColor),
                 ),
                 const SizedBox(width: 2),
-                IconsaxPakage(icon: IconsaxPakage.arrowLeft2, iconSize: 16),
+                IconsaxPakage(
+                    icon: IconsaxPakage.arrowLeft2,
+                    iconSize: 16,
+                    color: Theme.of(context).primaryColor),
               ],
             ),
           ),

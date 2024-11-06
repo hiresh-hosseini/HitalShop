@@ -4,4 +4,6 @@ class NamedRouts {
   static String routeLogin = '/login';
   static String routeRegister = '/register';
   static String routeHome = '/home';
+  static String routeCategory = '/category';
+  static String routeProduct = '/product';
 }
