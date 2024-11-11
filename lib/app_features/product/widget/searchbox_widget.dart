@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shop/app_core/constants/strings/fixed_hint_string.dart';
 import 'package:shop/app_core/pakages/iconsax_pakage.dart';
+import 'package:shop/app_features/product/controller/product_controller.dart';
 
 class SearchboxWidget extends StatelessWidget {
-  const SearchboxWidget({super.key});
+  SearchboxWidget({super.key});
+  final controller = Get.find<ProductController>();
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +28,8 @@ class SearchboxWidget extends StatelessWidget {
 
         //Search-----------------------------------------------------
         child: TextFormField(
-          // controller: controller.searchController,
-          // onChanged: (value) => controller.search(value),
+          controller: controller.searchController,
+          onChanged: (value) => controller.search(value),
           decoration: InputDecoration(
             border: const OutlineInputBorder(
               borderSide: BorderSide.none,
@@ -40,7 +43,7 @@ class SearchboxWidget extends StatelessWidget {
             suffixIcon: IconsaxPakage(
               icon: IconsaxPakage.searchNormal,
               iconSize: 24,
-              color: Theme.of(context).hintColor,
+              color: Colors.black,
             ),
           ),
         ),

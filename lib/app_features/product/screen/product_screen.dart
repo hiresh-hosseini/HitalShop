@@ -4,12 +4,14 @@ import 'package:shop/app_core/constants/strings/fixed_text_string.dart';
 import 'package:shop/app_core/pakages/loading_pakage.dart';
 import 'package:shop/app_core/widgets/appbar_widget.dart';
 import 'package:shop/app_features/product/controller/product_controller.dart';
-import 'package:shop/app_features/product/widget/category_list_widget.dart';
+import 'package:shop/app_features/product/widget/product_category_list_widget.dart';
 import 'package:shop/app_features/product/widget/gridview_widget.dart';
 import 'package:shop/app_features/product/widget/searchbox_widget.dart';
+import 'package:shop/app_features/product/widget/sort_widget.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({super.key});
+  // final int? categoryId;
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +27,23 @@ class ProductScreen extends StatelessWidget {
                   children: [
                     //------------------------------- AppBar -------------------------------
                     AppbarWidget(title: FixedTextString.textProducts),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
 
                     // ------------------------------- Search and sort -------------------------------
-                    Row(
-                      children: [
-                        SearchboxWidget(),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 18),
+                      child: Row(
+                        children: [
+                          SearchboxWidget(),
+                          const SizedBox(width: 8),
+                          SortWidget(),
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 22),
+                    const SizedBox(height: 22),
 
-                    CategoryListWidget(),
-                    SizedBox(height: 22),
+                    ProductCategoryListWidget(),
+                    const SizedBox(height: 22),
                     GridviewWidget(),
                   ],
                 ),

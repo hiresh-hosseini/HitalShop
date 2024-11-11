@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop/app_features/product/controller/product_controller.dart';
 
-class CategoryListWidget extends StatelessWidget {
-  CategoryListWidget({super.key});
+class ProductCategoryListWidget extends StatelessWidget {
+  ProductCategoryListWidget({super.key});
   final controller = Get.find<ProductController>();
 
   @override
@@ -41,6 +41,7 @@ class CategoryListWidget extends StatelessWidget {
                     color: controller.selectedCategoryId == category.id!
                         ? Colors.white
                         : Theme.of(context).primaryColor,
+                    fontSize: 14,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

@@ -4,19 +4,26 @@ import 'package:get/get.dart';
 import 'package:shop/app_core/constants/strings/fixed_text_string.dart';
 import 'package:shop/app_core/pakages/cached_network_image_pakage.dart';
 import 'package:shop/app_core/pakages/iconsax_pakage.dart';
+import 'package:shop/app_core/routes/routs_names.dart';
 import 'package:shop/app_data/models/product_model.dart';
+import 'package:shop/app_features/product/controller/product_controller.dart';
 
 class ProductListWidget extends StatelessWidget {
   const ProductListWidget(
-      {super.key, required this.title, required this.listParoducts});
+      {super.key, required this.title, required this.listParoducts, this.sort});
   final String title;
   final List<ProductModel> listParoducts;
+  final Sort? sort;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
+          onTap: () => Get.toNamed(
+            NamedRouts.routeProduct,
+            arguments: {'sort': sort},
+          ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Row(

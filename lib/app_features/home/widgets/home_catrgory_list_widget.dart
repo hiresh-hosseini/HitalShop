@@ -6,10 +6,12 @@ import 'package:shop/app_core/pakages/cached_network_image_pakage.dart';
 import 'package:shop/app_core/pakages/iconsax_pakage.dart';
 import 'package:shop/app_core/routes/routs_names.dart';
 import 'package:shop/app_data/models/category_model.dart';
+import 'package:shop/app_features/home/controllers/home_controller.dart';
 
-class CategoriesListWidget extends StatelessWidget {
-  const CategoriesListWidget({super.key, required this.listCategories});
+class HomeCategoriesListWidget extends StatelessWidget {
+  const HomeCategoriesListWidget({super.key, required this.listCategories});
 
+  // final int? categoryId;
   final List<CategoryModel> listCategories;
 
   @override
@@ -17,7 +19,7 @@ class CategoriesListWidget extends StatelessWidget {
     return Column(
       children: [
         GestureDetector(
-          onTap: () => Get.toNamed(NamedRouts.routeProduct),
+          onTap: () => Get.find<HomeController>().changePage(1),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Row(
@@ -63,7 +65,10 @@ class CategoriesListWidget extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: GestureDetector(
-                  onTap: () => Get.to(() => () {}),
+                  onTap: () => Get.toNamed(
+                    NamedRouts.routeProduct,
+                    arguments: {'categoryId': categories.id},
+                  ),
                   child: Column(
                     children: [
                       Container(

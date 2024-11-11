@@ -53,7 +53,7 @@ class Routings {
     //---------------------Product Screens---------------------
     GetPage(
       name: NamedRouts.routeProduct,
-      page: () => const ProductScreen(),
+      page: () => ProductScreen(),
       binding: ProductBinding(),
     ),
   ];
