@@ -6,8 +6,7 @@ class ProductDatailsController extends GetxController {
   ProductDetailRepository productDetailRepository = ProductDetailRepository();
   ProductModel? productModel;
 
-  final int id;
-  ProductDatailsController(this.id);
+  final int id = Get.arguments as int;
 
   Future<void> getProductDetails() async {
     productModel = await productDetailRepository.getProductDetail(id);

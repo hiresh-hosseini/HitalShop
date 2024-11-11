@@ -4,8 +4,7 @@ import 'package:shop/app_features/product/controller/product_datails_controller.
 class ProductDetailsBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<ProductDatailsController>(
-        () => ProductDatailsController(Get.arguments as int),
+    Get.lazyPut<ProductDatailsController>(() => ProductDatailsController(),
         fenix: true);
   }
 }
