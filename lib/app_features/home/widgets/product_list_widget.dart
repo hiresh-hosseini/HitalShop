@@ -64,7 +64,8 @@ class ProductListWidget extends StatelessWidget {
             itemBuilder: (context, index) {
               var products = listParoducts[index];
               return GestureDetector(
-                onTap: () => Get.to(() {}),
+                onTap: () => Get.toNamed(NamedRouts.routeProductDetails,
+                    arguments: products.id),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: SizedBox(

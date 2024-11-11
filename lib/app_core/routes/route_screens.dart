@@ -3,6 +3,7 @@ import 'package:shop/app_core/routes/bindings/auth_bindeing.dart';
 import 'package:shop/app_core/routes/bindings/category_binding.dart';
 import 'package:shop/app_core/routes/bindings/home_binding.dart';
 import 'package:shop/app_core/routes/bindings/product_binding.dart';
+import 'package:shop/app_core/routes/bindings/product_details_binding.dart';
 import 'package:shop/app_core/routes/routs_names.dart';
 import 'package:shop/app_features/authentication/screens/login_screen.dart';
 import 'package:shop/app_features/authentication/screens/register_screen.dart';
@@ -10,6 +11,7 @@ import 'package:shop/app_features/authentication/screens/splash_screen.dart';
 import 'package:shop/app_features/authentication/screens/start_screen.dart';
 import 'package:shop/app_features/category/screen/category_screen.dart';
 import 'package:shop/app_features/home/screens/home_screen.dart';
+import 'package:shop/app_features/product/screen/product_details_screen.dart';
 import 'package:shop/app_features/product/screen/product_screen.dart';
 
 class Routings {
@@ -53,8 +55,15 @@ class Routings {
     //---------------------Product Screens---------------------
     GetPage(
       name: NamedRouts.routeProduct,
-      page: () => ProductScreen(),
+      page: () => const ProductScreen(),
       binding: ProductBinding(),
+    ),
+
+    //---------------------Product details Screens---------------------
+    GetPage(
+      name: NamedRouts.routeProductDetails,
+      page: () => const ProductDetailsScreen(),
+      binding: ProductDetailsBinding(),
     ),
   ];
 }

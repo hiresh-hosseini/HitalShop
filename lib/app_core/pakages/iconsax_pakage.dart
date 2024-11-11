@@ -30,4 +30,8 @@ class IconsaxPakage extends StatelessWidget {
   static IconData get arrowLeft2 => Iconsax.arrow_left_2;
   static IconData get searchNormal_1 => Iconsax.search_normal_1;
   static IconData get sort => Iconsax.sort;
+  static IconData get arrowLeft_24 => Iconsax.arrow_left_24;
+  static IconData get messageText_1 => Iconsax.message_text_1;
+  static IconData get trash => Iconsax.trash;
+  static IconData get minus => Iconsax.minus;
 }

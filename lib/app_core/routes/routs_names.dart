@@ -6,4 +6,5 @@ class NamedRouts {
   static String routeHome = '/home';
   static String routeCategory = '/category';
   static String routeProduct = '/product';
+  static String routeProductDetails = '/productDetails';
 }
