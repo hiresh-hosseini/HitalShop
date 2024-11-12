@@ -15,6 +15,8 @@ class FixedTextString {
   static String get textCategory => 'دسته‌بندی:';
   static String get textOpinion => 'نظر';
   static String get textOpinions => 'نظرات';
+  static String get textAnswer => 'پاسخ: ';
+  static String get textSendOpinine => 'ارسال نظر';
   static String get textProductsWillBeAddedSoon =>
       'به زودی محصولات اضافه خواهند شد';
 }

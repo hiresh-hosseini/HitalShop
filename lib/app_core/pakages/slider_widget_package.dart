@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SliderWidget extends StatelessWidget {
-  const SliderWidget({super.key, required this.images});
+class SliderWidgetPackage extends StatelessWidget {
+  const SliderWidgetPackage({super.key, required this.images});
 
   final List<String> images;
 

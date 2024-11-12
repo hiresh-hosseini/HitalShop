@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop/app_core/constants/strings/fixed_text_string.dart';
 import 'package:shop/app_core/pakages/loading_pakage.dart';
-import 'package:shop/app_core/pakages/slider_widget.dart';
+import 'package:shop/app_core/pakages/slider_widget_package.dart';
 import 'package:shop/app_features/home/controllers/dashboard_controller.dart';
 import 'package:shop/app_features/home/widgets/home_catrgory_list_widget.dart';
 import 'package:shop/app_features/home/widgets/product_list_widget.dart';
@@ -28,7 +28,7 @@ class DashboardScreen extends StatelessWidget {
                     children: [
                       const SizedBox(height: 6),
 
-                      SliderWidget(
+                      SliderWidgetPackage(
                         images: controller.dashboardResponse!.sliders ?? [],
                       ),
                       const SizedBox(height: 15),

@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:shop/app_core/constants/strings/fixed_text_string.dart';
 import 'package:shop/app_core/pakages/iconsax_pakage.dart';
 import 'package:shop/app_core/pakages/loading_pakage.dart';
-import 'package:shop/app_core/pakages/product_slider_widget.dart';
+import 'package:shop/app_core/pakages/product_slider_Package.dart';
+import 'package:shop/app_core/routes/routs_names.dart';
 import 'package:shop/app_core/widgets/appbar_widget.dart';
 import 'package:shop/app_features/product/controller/product_datails_controller.dart';
 
@@ -21,7 +22,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   child: LoadingPakage(color: Theme.of(context).primaryColor))
               : Column(
                   children: [
-                    // ------------------------- Appbar Widget ---------------------------
+                    // -------------------------------------- Appbar Widget --------------------------------------
                     AppbarWidget(
                       widget: Align(
                         alignment: Alignment.centerRight,
@@ -48,8 +49,8 @@ class ProductDetailsScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            //Details--------------------------------------------------------------
-                            ProductSliderWidget(
+                            //----------------------------------------------- Details -------------------------------------------------
+                            ProductSliderPackage(
                               images: productDetail.gallery ?? [],
                             ),
                             const SizedBox(height: 20),
@@ -150,7 +151,7 @@ class ProductDetailsScreen extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 18),
-                            //Comment-------------------------------------------
+                            //--------------------------------------------- Comment -------------------------------------------
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 18),
@@ -159,7 +160,12 @@ class ProductDetailsScreen extends StatelessWidget {
                                 height: 45,
                                 color: Colors.white,
                                 elevation: 0,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.toNamed(
+                                    NamedRouts.routeCommentsScreen,
+                                    arguments: productDetail.id,
+                                  );
+                                },
                                 shape: RoundedRectangleBorder(
                                   side: BorderSide(
                                     color: Theme.of(context).dividerColor,
@@ -182,7 +188,7 @@ class ProductDetailsScreen extends StatelessWidget {
                                     ),
                                     const Spacer(),
                                     Text(
-                                      FixedTextString.textOpinion,
+                                      '${controller.productModel!.reviewsCount} ${FixedTextString.textOpinion}',
                                       style: const TextStyle(
                                           fontSize: 14,
                                           color: Color(0xff8c8c8c)),

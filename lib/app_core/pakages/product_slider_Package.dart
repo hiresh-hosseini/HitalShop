@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop/app_core/pakages/cached_network_image_pakage.dart';
 
-class ProductSliderWidget extends StatelessWidget {
-  const ProductSliderWidget({super.key, required this.images});
+class ProductSliderPackage extends StatelessWidget {
+  const ProductSliderPackage({super.key, required this.images});
 
   final List<String> images;
 

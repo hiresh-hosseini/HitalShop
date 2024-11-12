@@ -34,4 +34,5 @@ class IconsaxPakage extends StatelessWidget {
   static IconData get messageText_1 => Iconsax.message_text_1;
   static IconData get trash => Iconsax.trash;
   static IconData get minus => Iconsax.minus;
+  static IconData get start1 => Iconsax.star1;
 }

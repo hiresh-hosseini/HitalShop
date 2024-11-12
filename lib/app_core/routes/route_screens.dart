@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:shop/app_core/routes/bindings/auth_bindeing.dart';
 import 'package:shop/app_core/routes/bindings/category_binding.dart';
+import 'package:shop/app_core/routes/bindings/comment_binding.dart';
 import 'package:shop/app_core/routes/bindings/home_binding.dart';
 import 'package:shop/app_core/routes/bindings/product_binding.dart';
 import 'package:shop/app_core/routes/bindings/product_details_binding.dart';
@@ -11,6 +12,7 @@ import 'package:shop/app_features/authentication/screens/splash_screen.dart';
 import 'package:shop/app_features/authentication/screens/start_screen.dart';
 import 'package:shop/app_features/category/screen/category_screen.dart';
 import 'package:shop/app_features/home/screens/home_screen.dart';
+import 'package:shop/app_features/product/screen/comments_screen.dart';
 import 'package:shop/app_features/product/screen/product_details_screen.dart';
 import 'package:shop/app_features/product/screen/product_screen.dart';
 
@@ -64,6 +66,13 @@ class Routings {
       name: NamedRouts.routeProductDetails,
       page: () => const ProductDetailsScreen(),
       binding: ProductDetailsBinding(),
+    ),
+
+    //---------------------comments Screens---------------------
+    GetPage(
+      name: NamedRouts.routeCommentsScreen,
+      page: () => const CommentsScreen(),
+      binding: CommentBinding(),
     ),
   ];
 }
