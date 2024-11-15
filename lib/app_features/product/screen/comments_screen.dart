@@ -18,6 +18,7 @@ class CommentsScreen extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
+              //------------------------------------------- Appbar -----------------------------------------
               AppbarWidget(title: FixedTextString.textOpinions),
               Expanded(
                 child: controller.reviewResponse == null
@@ -45,6 +46,7 @@ class CommentsScreen extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
+                                    // ------------------------------------- User -----------------------------------------
                                     Text(
                                       review.user ?? '',
                                       style: const TextStyle(
@@ -53,6 +55,8 @@ class CommentsScreen extends StatelessWidget {
                                       ),
                                     ),
                                     const Spacer(),
+
+                                    //-------------------------------------- RatingBarIndicator -----------------------------
                                     Directionality(
                                       textDirection: TextDirection.ltr,
                                       child: RatingBarIndicator(
@@ -70,6 +74,8 @@ class CommentsScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+
+                                //----------------------------------- data ------------------------------------
                                 Text(
                                   review.date ?? '',
                                   style: const TextStyle(
@@ -101,6 +107,8 @@ class CommentsScreen extends StatelessWidget {
                                               color: Color(0xff8c8c8c),
                                             ),
                                           ),
+
+                                          // -------------------------------------- Reply --------------------------------------------
                                           Text(
                                             review.reply ?? '',
                                             style: const TextStyle(
@@ -135,7 +143,9 @@ class CommentsScreen extends StatelessWidget {
               ),
               context: context,
               builder: (context) => const CommentButtonsheet(),
-              routeSettings: RouteSettings(arguments: controller.productId),
+              routeSettings: RouteSettings(
+                arguments: controller.productId,
+              ),
             );
           },
           child: IconsaxPakage(

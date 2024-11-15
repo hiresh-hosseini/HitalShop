@@ -5,6 +5,7 @@ import 'package:shop/app_core/routes/bindings/comment_binding.dart';
 import 'package:shop/app_core/routes/bindings/home_binding.dart';
 import 'package:shop/app_core/routes/bindings/product_binding.dart';
 import 'package:shop/app_core/routes/bindings/product_details_binding.dart';
+import 'package:shop/app_core/routes/bindings/profile_binding.dart';
 import 'package:shop/app_core/routes/routs_names.dart';
 import 'package:shop/app_features/authentication/screens/login_screen.dart';
 import 'package:shop/app_features/authentication/screens/register_screen.dart';
@@ -15,6 +16,10 @@ import 'package:shop/app_features/home/screens/home_screen.dart';
 import 'package:shop/app_features/product/screen/comments_screen.dart';
 import 'package:shop/app_features/product/screen/product_details_screen.dart';
 import 'package:shop/app_features/product/screen/product_screen.dart';
+import 'package:shop/app_features/profile/screens/add_address_screen.dart';
+import 'package:shop/app_features/profile/screens/address_screen.dart';
+import 'package:shop/app_features/profile/screens/edit_profile_screen.dart';
+import 'package:shop/app_features/profile/screens/profile_screen.dart';
 
 class Routings {
   static List<GetPage> getPages = [
@@ -73,6 +78,37 @@ class Routings {
       name: NamedRouts.routeCommentsScreen,
       page: () => const CommentsScreen(),
       binding: CommentBinding(),
+    ),
+
+    //---------------------profile Screens---------------------
+    GetPage(
+      name: NamedRouts.routeProfileScreen,
+      page: () => const ProfileScreen(),
+      binding: ProfileBinding(),
+    ),
+
+    // GetPage(
+    //   name: NamedRouts.routeEditProfileScreen,
+    //   page: () => const EditProfileScreen(),
+    //   binding: ProfileBinding(),
+    // ),
+
+    // GetPage(
+    //   name: NamedRouts.routeAddAddressScreen,
+    //   page: () => const AddAddressScreen(),
+    //   binding: ProfileBinding(),
+    // ),
+
+    // GetPage(
+    //   name: NamedRouts.routeMapScreen,
+    //   page: () => const MapScreen(),
+    //   binding: ProfileBinding(),
+    // ),
+
+    GetPage(
+      name: NamedRouts.routeAddressScreen,
+      page: () => const AddressScreen(),
+      binding: ProfileBinding(),
     ),
   ];
 }

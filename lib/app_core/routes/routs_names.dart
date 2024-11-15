@@ -8,4 +8,9 @@ class NamedRouts {
   static String routeProduct = '/product';
   static String routeProductDetails = '/productDetails';
   static String routeCommentsScreen = '/commentsScreen';
+  static String routeProfileScreen = '/profileScreen';
+  static String routeEditProfileScreen = '/editProfileScreen';
+  static String routeAddAddressScreen = '/AddAddressScreen';
+  static String routeMapScreen = '/mapScreen';
+  static String routeAddressScreen = '/address';
 }

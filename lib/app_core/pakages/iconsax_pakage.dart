@@ -35,4 +35,7 @@ class IconsaxPakage extends StatelessWidget {
   static IconData get trash => Iconsax.trash;
   static IconData get minus => Iconsax.minus;
   static IconData get start1 => Iconsax.star1;
+  static IconData get arrowLeft => Iconsax.arrow_left;
+  static IconData get map => Iconsax.map;
+  static IconData get truckFast => Iconsax.truck_fast;
 }

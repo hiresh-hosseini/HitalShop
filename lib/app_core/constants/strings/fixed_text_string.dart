@@ -17,6 +17,21 @@ class FixedTextString {
   static String get textOpinions => 'نظرات';
   static String get textAnswer => 'پاسخ: ';
   static String get textSendOpinine => 'ارسال نظر';
+  static String get textEdit => 'ویرایش';
+  static String get textSignoutOfUserAccount => 'خروج از حساب کاربری';
+  static String get textAreYouSureAboutAccountExit =>
+      'آیا از خروج حساب مطمئن هستید؟';
+  static String get textNo => 'خیر';
+  static String get textCreateAddress => 'ایجاد آدرس';
+  static String get textYes => 'بله';
+  static String get textEditProfile => 'ویرایش پروفایل';
+  static String get textSelectedAddressOnMap => 'انتخاب آدرس روی نقشه';
+  static String get textLocationRegistration => 'ثبت موقعیت مکانی';
+  static String get textEditAddress => 'ویراش آدرس';
+  static String get textaddAddress => 'افزودن آدرس';
+  static String get textLocationIsSelected => 'موقعیت مکانی انتخاب شد';
+  static String get textShare =>
+      'لطفا برای نصب فروشگاه هیتال از لینک زیر استفاده کنید: https://hitaldev.ir';
   static String get textProductsWillBeAddedSoon =>
       'به زودی محصولات اضافه خواهند شد';
 }
