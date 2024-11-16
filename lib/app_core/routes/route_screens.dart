@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:shop/app_core/routes/bindings/auth_bindeing.dart';
+import 'package:shop/app_core/routes/bindings/bookmark_binding.dart';
 import 'package:shop/app_core/routes/bindings/category_binding.dart';
 import 'package:shop/app_core/routes/bindings/comment_binding.dart';
 import 'package:shop/app_core/routes/bindings/home_binding.dart';
@@ -16,9 +17,8 @@ import 'package:shop/app_features/home/screens/home_screen.dart';
 import 'package:shop/app_features/product/screen/comments_screen.dart';
 import 'package:shop/app_features/product/screen/product_details_screen.dart';
 import 'package:shop/app_features/product/screen/product_screen.dart';
-import 'package:shop/app_features/profile/screens/add_address_screen.dart';
 import 'package:shop/app_features/profile/screens/address_screen.dart';
-import 'package:shop/app_features/profile/screens/edit_profile_screen.dart';
+import 'package:shop/app_features/profile/screens/bookmark_screen.dart';
 import 'package:shop/app_features/profile/screens/profile_screen.dart';
 
 class Routings {
@@ -109,6 +109,12 @@ class Routings {
       name: NamedRouts.routeAddressScreen,
       page: () => const AddressScreen(),
       binding: ProfileBinding(),
+    ),
+
+    GetPage(
+      name: NamedRouts.routeBookMarkScreen,
+      page: () => const BookmarksScreen(),
+      binding: BookmarkBinding(),
     ),
   ];
 }

@@ -26,16 +26,25 @@ class ProductDetailsScreen extends StatelessWidget {
                     AppbarWidget(
                       widget: Align(
                         alignment: Alignment.centerRight,
-                        child: Container(
-                          padding: const EdgeInsets.all(6),
-                          margin: const EdgeInsets.only(right: 20),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                  color: Theme.of(context).dividerColor)),
-                          child: IconsaxPakage(
-                              icon: IconsaxPakage.heart, iconSize: 24),
+                        child: GestureDetector(
+                          onTap: () => controller.bookmark(),
+                          child: Container(
+                            padding: const EdgeInsets.all(6),
+                            margin: const EdgeInsets.only(right: 20),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(
+                                    color: Theme.of(context).dividerColor)),
+                            child: controller.productModel!.bookmarked!
+                                ? IconsaxPakage(
+                                    icon: IconsaxPakage.heartFill,
+                                    iconSize: 24,
+                                    color: Colors.red,
+                                  )
+                                : IconsaxPakage(
+                                    icon: IconsaxPakage.heart, iconSize: 24),
+                          ),
                         ),
                       ),
                     ),

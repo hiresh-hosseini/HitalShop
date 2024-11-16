@@ -6,6 +6,7 @@ import 'package:shop/app_core/widgets/button_navigation.dart';
 import 'package:shop/app_features/category/screen/category_screen.dart';
 import 'package:shop/app_features/home/controllers/home_controller.dart';
 import 'package:shop/app_features/home/screens/dashboard_screen.dart';
+import 'package:shop/app_features/profile/screens/bookmark_screen.dart';
 import 'package:shop/app_features/profile/screens/profile_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -101,8 +102,8 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     const DashboardScreen(),
                     const CategoryScreen(),
-                    Container(color: Colors.amber),
                     Container(color: Colors.red),
+                    const BookmarksScreen(),
                     const ProfileScreen(),
                   ],
                 ),

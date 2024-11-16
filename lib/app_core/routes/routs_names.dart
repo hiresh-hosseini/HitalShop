@@ -12,5 +12,6 @@ class NamedRouts {
   static String routeEditProfileScreen = '/editProfileScreen';
   static String routeAddAddressScreen = '/AddAddressScreen';
   static String routeMapScreen = '/mapScreen';
-  static String routeAddressScreen = '/address';
+  static String routeAddressScreen = '/addressScreen';
+  static String routeBookMarkScreen = '/bookMarkScreen';
 }
