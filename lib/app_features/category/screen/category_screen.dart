@@ -15,7 +15,7 @@ class CategoryScreen extends StatelessWidget {
       init: CategoryController(),
       builder: (controller) {
         return controller.categoryResponse == null
-            ? LoadingPakage(color: Theme.of(context).primaryColor)
+            ? LoadingPakage(size: 20.0, color: Theme.of(context).primaryColor)
             : Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: Column(

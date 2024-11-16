@@ -17,7 +17,7 @@ class DashboardScreen extends StatelessWidget {
       init: DashboardController(),
       builder: (controller) {
         return controller.dashboardResponse == null
-            ? LoadingPakage(color: Theme.of(context).primaryColor)
+            ? LoadingPakage(size: 20.0, color: Theme.of(context).primaryColor)
             : RefreshIndicator(
                 onRefresh: () async {
                   await controller.getDashboard();

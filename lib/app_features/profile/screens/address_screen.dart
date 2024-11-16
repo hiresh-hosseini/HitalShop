@@ -24,6 +24,7 @@ class AddressScreen extends StatelessWidget {
                     child: controller.addressResponse == null
                         ? Center(
                             child: LoadingPakage(
+                              size: 20.0,
                               color: Theme.of(context).primaryColor,
                             ),
                           )

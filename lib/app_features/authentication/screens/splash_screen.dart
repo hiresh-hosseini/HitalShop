@@ -31,6 +31,7 @@ class SplashScreen extends StatelessWidget {
                   ),
                   if (controller.isLoading)
                     LoadingPakage(
+                      size: 20.0,
                       color: Theme.of(context).primaryColor,
                     ),
                 ],

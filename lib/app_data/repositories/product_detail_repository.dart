@@ -18,4 +18,17 @@ class ProductDetailRepository extends BaseUrl {
     var response = await dio.get(Endpoint.bookmarks);
     return FilterProductResponse.fromJson(response.data);
   }
+
+  // چون میخوام مقداری که سرور بهم میده رو برگردونم اینت تعریف میکنم
+  Future<int> addToCart(
+      {required int productId,
+      required bool increment,
+      bool delete = false}) async {
+    var response = await dio.post(Endpoint.addToCart, data: {
+      'product_id': productId.toString(),
+      'increment': increment,
+      'delete': delete,
+    });
+    return response.data['count'] ?? 0;
+  }
 }

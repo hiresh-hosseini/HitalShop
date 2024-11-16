@@ -6,6 +6,7 @@ import 'package:shop/app_core/pakages/loading_pakage.dart';
 import 'package:shop/app_core/pakages/product_slider_Package.dart';
 import 'package:shop/app_core/routes/routs_names.dart';
 import 'package:shop/app_core/widgets/appbar_widget.dart';
+import 'package:shop/app_core/widgets/button_widget.dart';
 import 'package:shop/app_features/product/controller/product_datails_controller.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
@@ -19,7 +20,11 @@ class ProductDetailsScreen extends StatelessWidget {
         body: SafeArea(
           child: productDetail == null
               ? Center(
-                  child: LoadingPakage(color: Theme.of(context).primaryColor))
+                  child: LoadingPakage(
+                    size: 20.0,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                )
               : Column(
                   children: [
                     // -------------------------------------- Appbar Widget --------------------------------------
@@ -236,46 +241,59 @@ class ProductDetailsScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: Container(
-                        width: double.infinity,
-                        height: 45,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 18),
-                          child: Row(
-                            children: [
-                              GestureDetector(
-                                onTap: () {},
-                                child: IconsaxPakage(
-                                  icon: IconsaxPakage.add,
-                                  iconSize: 22,
-                                  color: Colors.white,
+                      child: controller.productModel!.cartCount == 0
+                          ? ButtonWidget(
+                              text: 'افزودن به سبد خرید',
+                              onPressed: () {
+                                controller.addToCart(true);
+                              },
+                            )
+                          : Container(
+                              width: double.infinity,
+                              height: 45,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).primaryColor,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 18),
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () => controller.addToCart(true),
+                                      child: IconsaxPakage(
+                                        icon: IconsaxPakage.add,
+                                        iconSize: 22,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    Text(
+                                      controller.productModel!.cartCount
+                                          .toString(),
+                                      style: const TextStyle(
+                                        fontSize: 22,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    GestureDetector(
+                                      onTap: () => controller.addToCart(false),
+                                      child: IconsaxPakage(
+                                        icon: controller
+                                                    .productModel!.cartCount ==
+                                                1
+                                            ? IconsaxPakage.trash
+                                            : IconsaxPakage.minus,
+                                        iconSize: 22,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              const Spacer(),
-                              Text(
-                                'cartCount',
-                                style: const TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              const Spacer(),
-                              GestureDetector(
-                                onTap: () {},
-                                child: IconsaxPakage(
-                                  icon: IconsaxPakage.trash,
-                                  iconSize: 22,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                            ),
                     ),
                   ],
                 ),

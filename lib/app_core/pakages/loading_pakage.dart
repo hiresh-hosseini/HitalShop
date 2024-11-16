@@ -5,14 +5,16 @@ class LoadingPakage extends StatelessWidget {
   const LoadingPakage({
     super.key,
     required this.color,
+    required this.size,
   });
   final Color color;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     return SpinKitThreeBounce(
       color: color,
-      size: 20,
+      size: size,
     );
   }
 }

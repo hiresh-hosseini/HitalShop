@@ -23,8 +23,8 @@ class ProfileScreen extends StatelessWidget {
             body: SafeArea(
               child: controller.profileUserModel == null
                   ? Center(
-                      child:
-                          LoadingPakage(color: Theme.of(context).primaryColor))
+                      child: LoadingPakage(
+                          size: 20.0, color: Theme.of(context).primaryColor))
                   : SingleChildScrollView(
                       padding: const EdgeInsets.symmetric(horizontal: 18),
                       child: Column(

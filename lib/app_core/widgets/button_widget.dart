@@ -40,6 +40,7 @@ class ButtonWidget extends StatelessWidget {
       onPressed: isLoading ? () {} : onPressed,
       child: isLoading
           ? const LoadingPakage(
+              size: 20.0,
               color: Colors.white,
             )
           : Row(

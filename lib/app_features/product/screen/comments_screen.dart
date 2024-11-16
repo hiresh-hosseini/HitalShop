@@ -24,7 +24,7 @@ class CommentsScreen extends StatelessWidget {
                 child: controller.reviewResponse == null
                     ? Center(
                         child: LoadingPakage(
-                            color: Theme.of(context).primaryColor),
+                            size: 20.0, color: Theme.of(context).primaryColor),
                       )
                     : ListView.builder(
                         padding: const EdgeInsets.all(18),

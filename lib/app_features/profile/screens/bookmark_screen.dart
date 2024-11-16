@@ -15,7 +15,8 @@ class BookmarksScreen extends StatelessWidget {
         builder: (controller) {
           return controller.filterProductResponse == null
               ? Center(
-                  child: LoadingPakage(color: Theme.of(context).primaryColor))
+                  child: LoadingPakage(
+                      size: 20.0, color: Theme.of(context).primaryColor))
               : Padding(
                   padding: const EdgeInsets.all(18),
                   child: Column(

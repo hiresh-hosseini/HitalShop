@@ -3,6 +3,8 @@ import 'package:shop/app_core/widgets/snackbar_widget.dart';
 import 'package:shop/app_data/repositories/address_repository.dart';
 import 'package:shop/app_data/repositories/product_respository.dart';
 import 'package:shop/app_data/responses/address_response.dart';
+import 'package:shop/app_features/product/controller/cart_controller.dart';
+import 'package:shop/app_features/product/screen/peyment_screen.dart';
 
 class OrderController extends GetxController {
   //Shipping-----------------------------------
@@ -52,6 +54,36 @@ class OrderController extends GetxController {
   void selecteAddress(Address address) {
     selectedAddress = address;
     update();
+  }
+
+  // توی کلاس وقتی گتر استفاده میشه که بخواییم توی کلاس محاسبه انجام بدم و ریترن کنم
+  // استرینگ تعریف میکنم که بتونم به جای مبلغ کل نشون بدم
+  String getTotalPrice() {
+    /// قیمت کل رو از کارت کنترلر میگیره
+    var totalPrice = Get.find<CartController>().cartResponse!.totalPrice;
+    // میخوام مقدار اینتیجر رو بریزم تو این
+    /// چون استرینگه به اینت تبدیل میشه
+    var total = int.parse(totalPrice!.replaceAll(',', ''));
+
+    /// اینم از چیزی که کاربر انتخاب کرده میگیره که اونم تبدیل میشه
+    int shippingPrice = 0;
+    if (selectedMethod != null) {
+      shippingPrice = int.parse(selectedMethod!.price.replaceAll(',', ''));
+    }
+    // تبدیل میکنم به استرینگ چون باید توی تابع استرینگ برگردونم
+    /// و حال اونا رو جمع و ریترن میکنه
+    return (total + shippingPrice).toString();
+  }
+
+  Future<void> order() async {
+    if (selectedAddress != null && selectedMethod != null) {
+      var link = await productRepository.order(
+          addressId: selectedAddress!.id!,
+          shippingMethod: selectedMethod!.value);
+      Get.off(() => PeymetnScreen(link: link));
+    } else {
+      errorMessage('لطفا همه‌ی موارد را انتخاب کنید');
+    }
   }
 
   @override

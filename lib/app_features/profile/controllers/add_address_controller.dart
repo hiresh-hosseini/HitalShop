@@ -4,8 +4,8 @@ import 'package:shop/app_core/widgets/snackbar_widget.dart';
 import 'package:shop/app_data/repositories/provinc_repository.dart';
 import 'package:shop/app_data/responses/address_response.dart';
 import 'package:shop/app_data/responses/province_response.dart';
+import 'package:shop/app_features/product/controller/order_controller.dart';
 import 'package:shop/app_features/profile/controllers/address_controller.dart';
-import 'package:shop/app_features/profile/controllers/order_controller.dart';
 
 class AddAddressController extends GetxController {
   final formKey = GlobalKey<FormState>();

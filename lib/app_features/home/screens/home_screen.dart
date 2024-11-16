@@ -6,6 +6,9 @@ import 'package:shop/app_core/widgets/button_navigation.dart';
 import 'package:shop/app_features/category/screen/category_screen.dart';
 import 'package:shop/app_features/home/controllers/home_controller.dart';
 import 'package:shop/app_features/home/screens/dashboard_screen.dart';
+import 'package:shop/app_features/product/controller/cart_controller.dart';
+import 'package:shop/app_features/product/screen/cart_screen.dart';
+import 'package:shop/app_features/product/screen/product_screen.dart';
 import 'package:shop/app_features/profile/screens/bookmark_screen.dart';
 import 'package:shop/app_features/profile/screens/profile_screen.dart';
 
@@ -41,41 +44,43 @@ class HomeScreen extends StatelessWidget {
                           child: IconsaxPakage(
                               icon: IconsaxPakage.bag_2, iconSize: 26.0),
                         ),
-                        // controller.cartResponse == null
-                        //         ? Container()
-                        //         :
-                        Visibility(
-                          // visible:
-                          // controller.cartResponse!.totalItems != 0,
-                          child: Container(
-                            height: 18,
-                            width: 18,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Color(0xffff0000),
-                            ),
-                            child: Center(
-                              child: Text(
-                                // controller.cartResponse!.totalItems
-                                // .toString(),
-                                'totalItems',
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                        GetBuilder<CartController>(
+                            init: CartController(),
+                            builder: (controller) {
+                              return controller.cartResponse == null
+                                  ? Container()
+                                  : Visibility(
+                                      visible:
+                                          controller.cartResponse!.totalItems !=
+                                              0,
+                                      child: Container(
+                                        height: 18,
+                                        width: 18,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Color(0xffff0000),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            controller.cartResponse!.totalItems
+                                                .toString(),
+                                            style: const TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                            }),
                       ],
                     ),
                     const Spacer(),
                     Image.asset('assets/images/h.webp', height: 50),
                     const Spacer(),
                     GestureDetector(
-                      // onTap: () => Get.to(() => const ProductsListScreen()),
-                      onTap: () {},
+                      onTap: () => Get.to(() => const ProductScreen()),
                       child: Container(
                         height: 45,
                         width: 45,
@@ -99,12 +104,12 @@ class HomeScreen extends StatelessWidget {
                 child: PageView(
                   controller: controller.pageController,
                   physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    const DashboardScreen(),
-                    const CategoryScreen(),
-                    Container(color: Colors.red),
-                    const BookmarksScreen(),
-                    const ProfileScreen(),
+                  children: const [
+                    DashboardScreen(),
+                    CategoryScreen(),
+                    CardScreen(),
+                    BookmarksScreen(),
+                    ProfileScreen(),
                   ],
                 ),
               ),

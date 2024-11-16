@@ -18,35 +18,38 @@ class ProductScreen extends StatelessWidget {
     return GetBuilder<ProductController>(builder: (controller) {
       return Scaffold(
         body: SafeArea(
-          child: controller.categoryList == null ||
-                  controller.productList == null
-              ? Center(
-                  child: LoadingPakage(color: Theme.of(context).primaryColor),
-                )
-              : Column(
-                  children: [
-                    //------------------------------- AppBar -------------------------------
-                    AppbarWidget(title: FixedTextString.textProducts),
-                    const SizedBox(height: 15),
-
-                    // ------------------------------- Search and sort -------------------------------
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 18),
-                      child: Row(
-                        children: [
-                          SearchboxWidget(),
-                          const SizedBox(width: 8),
-                          SortWidget(),
-                        ],
+          child:
+              controller.categoryList == null || controller.productList == null
+                  ? Center(
+                      child: LoadingPakage(
+                        size: 20.0,
+                        color: Theme.of(context).primaryColor,
                       ),
-                    ),
-                    const SizedBox(height: 22),
+                    )
+                  : Column(
+                      children: [
+                        //------------------------------- AppBar -------------------------------
+                        AppbarWidget(title: FixedTextString.textProducts),
+                        const SizedBox(height: 15),
 
-                    ProductCategoryListWidget(),
-                    const SizedBox(height: 22),
-                    GridviewWidget(),
-                  ],
-                ),
+                        // ------------------------------- Search and sort -------------------------------
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 18),
+                          child: Row(
+                            children: [
+                              SearchboxWidget(),
+                              const SizedBox(width: 8),
+                              SortWidget(),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 22),
+
+                        ProductCategoryListWidget(),
+                        const SizedBox(height: 22),
+                        GridviewWidget(),
+                      ],
+                    ),
         ),
       );
     });
